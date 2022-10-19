@@ -56,7 +56,7 @@ import random
 #
 # menu()
 
-import random
+import random # not finished!
 
 def gera():
     return random.randint(1, 6)
