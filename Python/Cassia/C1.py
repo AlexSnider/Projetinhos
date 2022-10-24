@@ -3,15 +3,18 @@
 import random
 import time
 
-def entrada():
+def inicio():
     user_input = input('Olá, caro amigo! Vamos jogar dados!? (Digite "S" para SIM ou "N" para Não)\n').upper()
-    if user_input == 'N':
-        print('Terminamos por aqui! Até mais!')
-    elif user_input == 'S':
-        instrucoes()
-        pass
-    else:
-        entrada()
+    while True:
+        if user_input == 'N':
+            print('Terminamos por aqui! Até mais!')
+            break
+        elif user_input == 'S':
+            instrucoes()
+            game()
+            break
+        else:
+            inicio()
 
 def instrucoes():
     print('Regras do jogo!!!')
@@ -26,7 +29,24 @@ def instrucoes():
           'e se tirar um 7 antes desse ponto, você perde!')
     time.sleep(0)
 
-def joga_os_dados():
+def game():
+    while True:
+        iniciar = input('Aperte ENTER para iniciar. '
+                        'Se você não ganhar ou perder, o jogo continuará até você conseguir o seu [PONTO].')
+        if iniciar == iniciar:
+            jogada = roll() + roll()
+            if jogada == 7:
+                print('Tirou:', jogada, 'Ganhou!')
+                break
+            elif jogada == 11:
+                print('Tirou:', jogada, 'Ganhou!')
+                break
+            else:
+                print('*******************************')
+                print('Somando os dados, você tirou:', jogada)
+                print('*******************************')
+
+def roll():
     return random.randint(1, 6)
 
-entrada()
+inicio()
