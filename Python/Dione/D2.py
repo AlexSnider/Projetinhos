@@ -44,5 +44,5 @@ def filtrar(x):
     return separate
 
 
-print(filtrar(gera_matriz(lin, col)))
+#print(filtrar(gera_matriz(lin, col)))
 
