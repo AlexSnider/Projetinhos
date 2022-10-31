@@ -1,20 +1,26 @@
+# Escrever um programa que gere valores aleatórios para uma matriz de inteiros.
+# Após, exiba para cada linha, o percentual de valores pares e o percentual de valores ímpares.
+
 import random
 
-def gerar_numeros():
-    return random.randint(10, 50)
+lin = int(input('Defina a quantidade de linhas: '))
+col = int(input('Defina a quantidade de colunas: '))
 
-def gerar_matriz():
-    lin = int(input('Defina a quantidade de linhas: '))
-    col = int(input('Defina a quantidade de colunas: '))
+
+def gerar_numeros(m, n):
+    m = 10
+    n = 50
+    return random.randint(m, n)
+
+
+def gerar_matriz(m, n):
     matriz = []
-
-    for i in range(lin):
+    for i in range(m):
         linMatriz = []
-        for c in range(col):
-            linMatriz.append((gerar_numeros()))
+        for j in range(n):
+            linMatriz.append(gerar_numeros(m, n))
         matriz.append(linMatriz)
-    print(matriz)
+    return matriz
 
-
-gerar_matriz()
+print(gerar_matriz(lin, col))
 
