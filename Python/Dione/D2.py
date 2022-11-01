@@ -31,11 +31,10 @@ def gera_matriz(m, n):
     return matriz
 
 
-
-def filtrar(x):
+def filtrar(matriz):
     par = []
     impar = []
-    for i in x:
+    for i in matriz:
         if i % 2 == 0:
             par.append(i)
         else:
@@ -43,6 +42,6 @@ def filtrar(x):
     separate = [par, impar]
     return separate
 
-
 #print(filtrar(gera_matriz(lin, col)))
 
+#Foi o máximo que consegui!!! :(
