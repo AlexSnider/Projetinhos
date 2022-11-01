@@ -11,8 +11,13 @@
 
 import random
 
-lin = int(input('Defina a quantidade de linhas: '))
-col = int(input('Defina a quantidade de colunas: '))
+
+def main():
+    lin = int(input('Defina a quantidade de linhas: '))
+    col = int(input('Defina a quantidade de colunas: '))
+    matriz = gera_matriz(lin, col)
+    imprime_matriz(matriz, lin, col)
+    print(filtrar(matriz, lin, col))
 
 
 def gerar_numeros(m, n):
@@ -31,17 +36,29 @@ def gera_matriz(m, n):
     return matriz
 
 
-def filtrar(matriz):
+def imprime_matriz(matriz, m, n):
+    count = 0
+    for i in range(m):
+        linha = ''
+        count += 1
+        for j in range(n):
+            linha += str(matriz[i][j])
+            linha += ' | '
+        print('Linha:', count, '= |', linha)
+
+
+def filtrar(x, m, n):
     par = []
     impar = []
-    for i in matriz:
-        if i % 2 == 0:
-            par.append(i)
-        else:
-            impar.append(i)
-    separate = [par, impar]
+
+    for i in range(m):
+        for j in range(n):
+            if x[i][j] % 2 == 0:
+                par.append(x[i][j])
+            else:
+                impar.append(x[i][j])
+    separate = par + impar
     return separate
 
-#print(filtrar(gera_matriz(lin, col)))
 
-#Foi o máximo que consegui!!! :(
+main()
