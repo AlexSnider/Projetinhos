@@ -13,11 +13,12 @@ import random
 
 
 def main():
+    print('Insira os dados para gerar a matriz!')
     lin = int(input('Defina a quantidade de linhas: '))
     col = int(input('Defina a quantidade de colunas: '))
     matriz = gera_matriz(lin, col)
     imprime_matriz(matriz, lin, col)
-    print(filtrar(matriz, lin, col))
+    print('Pares seguidos de ímpares:', filtrar(matriz, lin, col))
 
 
 def gerar_numeros(m, n):
@@ -50,7 +51,6 @@ def imprime_matriz(matriz, m, n):
 def filtrar(x, m, n):
     par = []
     impar = []
-
     for i in range(m):
         for j in range(n):
             if x[i][j] % 2 == 0:

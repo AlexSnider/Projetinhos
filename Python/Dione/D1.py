@@ -3,14 +3,12 @@
 
 import random
 
-print('Insira o tamanho da matriz.\n')
-
-lin = int(input('Defina a quantidade de linhas: '))
-col = int(input('Defina a quantidade de colunas: '))
-input('Aperte ENTER para gerar os dados da Matriz e seus percentuais.')
-
 
 def main():
+    print('Insira o tamanho da matriz.\n')
+    lin = int(input('Defina a quantidade de linhas: '))
+    col = int(input('Defina a quantidade de colunas: '))
+    input('Aperte ENTER para gerar os dados da Matriz e seus percentuais.')
     matriz = gerar_matriz(lin, col)
     imprime_matriz(matriz, lin, col)
     percentual(matriz, lin, col)
@@ -55,6 +53,7 @@ def percentual(matriz, m, n,):
                 totalPar += 1
             else:
                 totalImpar += 1
+        print()
         print("Porcentagem de números pares na linha:", count, '=', (round(totalPar / total * 100.0)), '%')
         print("Porcentagem de números ímpares na linha:", count, '=', (round(totalImpar / total * 100.0)), '%\n')
 
