@@ -57,7 +57,7 @@ def filtrar(x, m, n):
                 par.append(x[i][j])
             else:
                 impar.append(x[i][j])
-    separate = par + impar
+    separate = sorted(par) + sorted(impar)
     return separate
 
 
