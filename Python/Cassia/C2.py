@@ -50,28 +50,13 @@ def game(palavra_grafia_certa):
         user_input = input('Digita a palavra: ')
         if user_input not in palavra_grafia_certa:
             tentativas += 1
-            print('Essa foi a sua', tentativas, 'tentativa. Continue tentando!')
-        elif tentativas == 6:
+            print('Essa foi a sua', tentativas, 'tentativa.')
+        if tentativas >= 6:
             print('Você não acertou. A palavra era', palavra_grafia_certa)
             break
-        elif user_input == palavra_grafia_certa:
+        if user_input == palavra_grafia_certa:
             print('Você acertou! A palavra era:', '|', palavra_grafia_certa, '|')
             break
-
-
-
-        # tentativas = 0
-        # user_input = input('Digite a primeira tentativa: ')
-        # while user_input not in palavra_grafia_certa:
-        #     tentativas += 1
-        #     print('Tentativa:', tentativas)
-        #     user_input = input('Ainda não acertou. Continue tentando: ')
-        #     if tentativas == 6:
-        #         print('Você não acertou. A palavra era', palavra_grafia_certa)
-        #         break
-        #     if user_input == palavra_grafia_certa:
-        #         print('Você acertou! A palavra era:', palavra_grafia_certa)
-        #         break
 
 
 main()
