@@ -54,8 +54,8 @@ def percentual(matriz, m, n,):
             else:
                 totalImpar += 1
         print()
-        print("Porcentagem de números pares na linha:", count, '=', (round(totalPar / total * 100.0)), '%')
-        print("Porcentagem de números ímpares na linha:", count, '=', (round(totalImpar / total * 100.0)), '%\n')
+        print("Porcentagem de números pares na linha:", count, ('= %.2f' % (totalPar / total * 100.0)), '%')
+        print("Porcentagem de números ímpares na linha:", count, ('= %.2f' % (totalImpar / total * 100.0)), '%\n')
 
 
 main()
