@@ -17,9 +17,25 @@
 import random
 
 
-def main():
+def inicio():
+    user_input = input('Vamos jogar? (Digite "S" para SIM ou "N" para Não): ').upper()
+    while True:
+        if user_input == 'N':
+            print('Terminamos por aqui! Até mais!')
+            break
+        elif user_input == 'S':
+            continua()
+            break
+        else:
+            inicio()
+            break
+
+
+def continua():
+    print('-=' * 30)
     print('Olá!, Bem vindo ao jogo de adivinhação de palavras.')
     print('Você tem 6 tentativas para adivinhar qual é!')
+    print('Insira 10 palavras!')
     palavra_certa = escolhe_palavra(palavras())
     palavra_grafia_certa = palavra_certa
     embaralha(palavra_grafia_certa)
@@ -27,9 +43,13 @@ def main():
 
 
 def palavras():
-    list_words = ['Venezuela', 'Protesto', 'Guerra', 'Brasil', 'Livre', 'Maracutaia', 'Corrupção',
-                  'Insegurança', 'Inflação', 'CiroGomes']
-    print('A palavra é alguma dessas:', list_words)
+    cont = 1
+    list_words = []
+    while cont <= 10:
+        user_input = input('Insira as palavras: ')
+        print('Você inseriu a palavra número:', cont)
+        cont += 1
+        list_words.append(user_input)
     return list_words
 
 
@@ -40,23 +60,29 @@ def escolhe_palavra(list_words):
 
 def embaralha(word):
     mixed_word = ''.join(random.sample(word, len(word)))
+    print('-=' * 30)
     print('A palavra a ser adivinhada é:', mixed_word)
+    print('-=' * 30)
     return mixed_word
 
 
 def game(palavra_grafia_certa):
     tentativas = 0
     while True:
-        user_input = input('Digita a palavra: ')
+        user_input = input('Digite a palavra que você acha ser: ')
         if user_input not in palavra_grafia_certa:
             tentativas += 1
             print('Essa foi a sua', tentativas, 'tentativa.')
         if tentativas >= 6:
-            print('Você não acertou. A palavra era', palavra_grafia_certa)
+            print('Você não acertou. A palavra era:', palavra_grafia_certa)
+            print('-=' * 30)
+            inicio()
             break
         if user_input == palavra_grafia_certa:
             print('Você acertou! A palavra era:', '|', palavra_grafia_certa, '|')
+            print('-=' * 30)
+            inicio()
             break
 
 
-main()
+inicio()
