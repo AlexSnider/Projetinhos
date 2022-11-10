@@ -12,6 +12,7 @@
     <div class="row m-auto justify-content-center">
         <div class="col-lg-4">
             <form>
+                <!-- Form-first-data -->
                 <label for="first-name" class="form-label">Primeiro Nome:</label>
                 <input type="text" class="form-control" id="first-name" placeholder="Alex" required><br>
                 
@@ -27,10 +28,12 @@
                 <label for="zipcode" class="form-label">Insira seu CEP:</label>
                 <input type="number" class="form-control" id="zipcode" pattern="[0-9]{5}" placeholder="12345-678" required><br>
 
+                <!-- Form-anex-data -->
                 <div for="file" class="form-label"><h4>Anexe seus documentos:</h4>
                 <input type="file" class="form-control "id="file" name="file">
                 </div>
 
+                <!-- Form-gender -->
                 <div class="gender-radio"><br>
                     <label for="form-check-input">Seu gênero:</label>
                 </div>
@@ -50,7 +53,7 @@
                     <label class="form-check-label" for="flexRadioDefault1">Prefiro não dizer</label>
                 </div><br>
                 
-
+                <!-- Form-car -->
                 <div class="escolha-label">
                     <label for="escolha" class="form-label">Escolha a marca do carro:</label>
                 </div>
@@ -65,6 +68,7 @@
                     </select><br>
                 </div>
 
+                <!-- Form-engine -->
                 <div class="checkbox-label">
                     <label for="checkbox-label">Morotização:</label>
                 </div>
@@ -83,26 +87,30 @@
                     <label class="form-check-label" for="engine">2.0 Flex</label>
                 </div><br>
 
+                <!-- Form-pricing-range -->
                 <div class="pricing">
                     <label for="Range1" class="form-label">Preço desejável:</label>
                     <input type="range" class="form-range" id="Range1"><br><br>
                 </div>
                 
+                <!-- Form-car-color -->
                 <div class="color-picker">
                     <label for="color-input" class="form-label">Escolha uma cor:</label>
                     <input type="color" class="form-control form-control-color" id="color-input" value="#563d7c">
                 </div><br>
 
-                <div class="mb-3">
+                <!-- Form-password -->
+                <div class="password-input">
                     <label for="senha" class="form-label">Insira uma senha:</label>
                     <input type="password" class="form-control" id="senha" placeholder="1234567890">
                 </div>
 
-                <div class="mb-3">
+                <div class="password-input">
                     <label for="senha" class="form-label">Confirme sua senha:</label>
                     <input type="password" class="form-control" id="senha" placeholder="1234567890">
                 </div><br>
-    
+                
+                <!-- Form-submit-button -->
                 <button onclick="alert('Cadastro realizado!')" type="submit" class="btn btn-success">Enviar</button><br><br>
             </form>
         </div>
