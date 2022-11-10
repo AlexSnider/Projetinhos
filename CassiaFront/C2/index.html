@@ -3,22 +3,110 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro de Carros</title>
+    <title>Reservar Carro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <form class="row g-3">
-        <div class="col-md-6">
-            <label for="first-name" class="form-label">Primeiro Nome</label>
-            <input type="text" class="form-control" id="first-name" required>
-        </div>
+    <h1 class="title row m-auto justify-content-center my-4">Insira seus dados abaixo</h1>
+    <h4 class="description row m-auto justify-content-center my-4">Esse formúlario validará sua escolha pelo carro desejado!</h4>
+    <div class="row m-auto justify-content-center">
+        <div class="col-lg-4">
+            <form>
+                <label for="first-name" class="form-label">Primeiro Nome:</label>
+                <input type="text" class="form-control" id="first-name" placeholder="Alex" required><br>
+                
+                <label for="second-name" class="form-label">Segundo Nome:</label>
+                <input type="text" class="form-control" id="second-name" placeholder="Oliveira" required><br>
 
-        <div class="col-md-6">
-            <label for="second-name" class="form-label">Segundo Nome</label>
-            <input type="text" class="form-control" id="second-name" required>
+                <label for="email" class="form-label">Insira seu email:</label>
+                <input type="email" class="form-control" id="email" placeholder="1234@.com" required><br>
+
+                <label for="telefone" class="form-label">Insira seu telefone:</label>
+                <input type="tel" class="form-control" id="telefone" placeholder="(00) 12345-6789" required><br>
+
+                <label for="zipcode" class="form-label">Insira seu CEP:</label>
+                <input type="number" class="form-control" id="zipcode" pattern="[0-9]{5}" placeholder="12345-678" required><br>
+
+                <div for="file" class="form-label"><h4>Anexe seus documentos:</h4>
+                <input type="file" class="form-control "id="file" name="file">
+                </div>
+
+                <div class="gender-radio"><br>
+                    <label for="form-check-input">Seu gênero:</label>
+                </div>
+                    
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="radio1">
+                    <label class="form-check-label" for="flexRadioDefault1">Masculino</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="radio1">
+                    <label class="form-check-label" for="flexRadioDefault1">Feminino</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="radio1">
+                    <label class="form-check-label" for="flexRadioDefault1">Prefiro não dizer</label>
+                </div><br>
+                
+
+                <div class="escolha-label">
+                    <label for="escolha" class="form-label">Escolha a marca do carro:</label>
+                </div>
+
+                <div class="escolha-check">
+                    <select class="form-select" id="escolha">
+                        <option value="brand">Hyundai</option>
+                        <option value="brand">Toyota</option>
+                        <option value="brand">Nissan</option>
+                        <option value="brand">Citroen</option>
+                        <option value="brand">Honda</option>
+                    </select><br>
+                </div>
+
+                <div class="checkbox-label">
+                    <label for="checkbox-label">Morotização:</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="engine">
+                    <label class="form-check-label" for="engine">1.0 Flex</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="engine">
+                    <label class="form-check-label" for="engine">1.4 Flex</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="engine">
+                    <label class="form-check-label" for="engine">1.8 Flex</label><br>
+
+                    <input type="checkbox" class="form-check-input" id="engine">
+                    <label class="form-check-label" for="engine">2.0 Flex</label>
+                </div><br>
+
+                <div class="pricing">
+                    <label for="Range1" class="form-label">Preço desejável:</label>
+                    <input type="range" class="form-range" id="Range1"><br><br>
+                </div>
+                
+                <div class="color-picker">
+                    <label for="color-input" class="form-label">Escolha uma cor:</label>
+                    <input type="color" class="form-control form-control-color" id="color-input" value="#563d7c">
+                </div><br>
+
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Insira uma senha:</label>
+                    <input type="password" class="form-control" id="senha" placeholder="1234567890">
+                </div>
+
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Confirme sua senha:</label>
+                    <input type="password" class="form-control" id="senha" placeholder="1234567890">
+                </div><br>
+    
+                <button onclick="alert('Cadastro realizado!')" type="submit" class="btn btn-success">Enviar</button><br><br>
+            </form>
         </div>
-    </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
