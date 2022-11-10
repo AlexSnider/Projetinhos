@@ -7,30 +7,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    <h1 class="title row m-auto justify-content-center my-4">Insira seus dados abaixo</h1>
-    <h4 class="description row m-auto justify-content-center my-4">Esse formúlario validará sua escolha pelo carro desejado!</h4>
+    <div class="form-header">
+        <h1 class="title row m-auto justify-content-center my-4">Insira seus dados abaixo!</h1>
+        <h5 class="description row m-auto justify-content-center my-4">Esse formúlario validará sua escolha pelo carro desejado!</h5>
+    </div>
+    
     <div class="row m-auto justify-content-center">
-        <div class="col-lg-4">
-            <form>
-                <!-- Form-first-data -->
+        <div class="col-lg-3">
+            <form action="#">
+                <!-- Form-data -->
                 <label for="first-name" class="form-label">Primeiro Nome:</label>
-                <input type="text" class="form-control" id="first-name" placeholder="Alex" required><br>
+                <input type="text" class="form-control" id="first-name" placeholder="Mario" required><br>
                 
                 <label for="second-name" class="form-label">Segundo Nome:</label>
-                <input type="text" class="form-control" id="second-name" placeholder="Oliveira" required><br>
+                <input type="text" class="form-control" id="second-name" placeholder="Quintana" required><br>
 
                 <label for="email" class="form-label">Insira seu email:</label>
-                <input type="email" class="form-control" id="email" placeholder="1234@.com" required><br>
+                <input type="email" class="form-control" id="email" placeholder="Seu melhor email" required><br>
 
-                <label for="telefone" class="form-label">Insira seu telefone:</label>
-                <input type="tel" class="form-control" id="telefone" placeholder="(00) 12345-6789" required><br>
+                <label for="telefone" class="form-label">Insira seu telefone (cel):</label>
+                <input type="tel" class="form-control" id="telefone" placeholder="Insira seu telefone" required><br>
 
                 <label for="zipcode" class="form-label">Insira seu CEP:</label>
-                <input type="number" class="form-control" id="zipcode" pattern="[0-9]{5}" placeholder="12345-678" required><br>
+                <input type="number" class="form-control" id="zipcode" pattern="[0-9]{5}" placeholder="Número do seu CEP" required><br>
 
                 <!-- Form-anex-data -->
                 <div for="file" class="form-label"><h4>Anexe seus documentos:</h4>
-                <input type="file" class="form-control "id="file" name="file">
+                    <input type="file" class="form-control "id="file" name="file">
                 </div>
 
                 <!-- Form-gender -->
@@ -40,17 +43,17 @@
                     
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="radio1">
-                    <label class="form-check-label" for="flexRadioDefault1">Masculino</label>
+                    <label class="form-check-label" for="radio1">Masculino</label>
                 </div>
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="radio1">
-                    <label class="form-check-label" for="flexRadioDefault1">Feminino</label>
+                    <label class="form-check-label" for="radio1">Feminino</label>
                 </div>
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="radio1">
-                    <label class="form-check-label" for="flexRadioDefault1">Prefiro não dizer</label>
+                    <label class="form-check-label" for="radio1">Prefiro não dizer</label>
                 </div><br>
                 
                 <!-- Form-car -->
@@ -70,27 +73,27 @@
 
                 <!-- Form-engine -->
                 <div class="checkbox-label">
-                    <label for="checkbox-label">Morotização:</label>
+                    <label for="checkbox-label">Motorização:</label>
                 </div>
 
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="engine">
-                    <label class="form-check-label" for="engine">1.0 Flex</label><br>
+                    <label class="form-check-label" for="engine">Motor 1.0 Flex TGDI</label><br>
 
                     <input type="checkbox" class="form-check-input" id="engine">
-                    <label class="form-check-label" for="engine">1.4 Flex</label><br>
+                    <label class="form-check-label" for="engine">Motor 1.4 Flex</label><br>
 
                     <input type="checkbox" class="form-check-input" id="engine">
-                    <label class="form-check-label" for="engine">1.8 Flex</label><br>
+                    <label class="form-check-label" for="engine">Motor 1.8 Flex</label><br>
 
                     <input type="checkbox" class="form-check-input" id="engine">
-                    <label class="form-check-label" for="engine">2.0 Flex</label>
+                    <label class="form-check-label" for="engine">Motor 2.0 Flex</label>
                 </div><br>
 
                 <!-- Form-pricing-range -->
                 <div class="pricing">
-                    <label for="Range1" class="form-label">Preço desejável:</label>
-                    <input type="range" class="form-range" id="Range1"><br><br>
+                    <label for="Range1" class="form-label">Preço desejável: (R$50.000 - R$125.000)</label>
+                    <input type="range" class="form-range" id="Range1" min="50.000,00" max="125.000,00" value="50.000"><br><br>
                 </div>
                 
                 <!-- Form-car-color -->
@@ -102,12 +105,12 @@
                 <!-- Form-password -->
                 <div class="password-input">
                     <label for="senha" class="form-label">Insira uma senha:</label>
-                    <input type="password" class="form-control" id="senha" placeholder="1234567890">
+                    <input type="password" class="form-control" id="senha" placeholder="Digite uma senha">
                 </div>
 
                 <div class="password-input">
                     <label for="senha" class="form-label">Confirme sua senha:</label>
-                    <input type="password" class="form-control" id="senha" placeholder="1234567890">
+                    <input type="password" class="form-control" id="senha" placeholder="Confirme a senha digitada">
                 </div><br>
                 
                 <!-- Form-submit-button -->
