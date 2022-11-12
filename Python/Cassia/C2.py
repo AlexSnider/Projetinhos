@@ -35,18 +35,25 @@ def continua():
     print('-=' * 30)
     print('Olá!, Bem vindo ao jogo de adivinhação de palavras.')
     print('Você tem 6 tentativas para adivinhar qual é!')
-    print('Insira 10 palavras!')
+    print('Você precisa inserir 10 palavras...')
     palavra_certa = escolhe_palavra(palavras())
     palavra_grafia_certa = palavra_certa
     embaralha(palavra_grafia_certa)
-    game(palavra_grafia_certa)
+    if game(palavra_grafia_certa) == True:
+        print('Você acertou! A palavra era:', '>', palavra_grafia_certa, '<')
+        print('-=' * 30)
+        inicio()
+    else:
+        print('Você perdeu! A palavra era:', palavra_grafia_certa)
+        print('-=' * 30)
+        inicio()
 
 
 def palavras():
     cont = 1
     list_words = []
     while cont <= 10:
-        user_input = input('Insira as palavras: ')
+        user_input = input('Insira a palavra: ')
         print('Você inseriu a palavra número:', cont)
         cont += 1
         list_words.append(user_input)
@@ -74,15 +81,9 @@ def game(palavra_grafia_certa):
             tentativas += 1
             print('Essa foi a sua', tentativas, 'tentativa.')
         if tentativas >= 6:
-            print('Você não acertou. A palavra era:', palavra_grafia_certa)
-            print('-=' * 30)
-            inicio()
-            break
+            return False
         if user_input == palavra_grafia_certa:
-            print('Você acertou! A palavra era:', '|', palavra_grafia_certa, '|')
-            print('-=' * 30)
-            inicio()
-            break
+            return True
 
 
 inicio()
