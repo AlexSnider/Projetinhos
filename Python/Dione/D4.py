@@ -5,9 +5,12 @@ user_input = input('Digite um texto qualquer: ')
 count = 0
 contador = len(user_input)
 count += contador
+
 print('O número de total de caracteres é de:', count)
 
 count2 = 0
 contador2 = len(user_input.split())
-count2 += contador2
+if contador2 != '' and ',' and '.':
+    count2 += contador2
+
 print('O número de total de palavras é de:', count2)

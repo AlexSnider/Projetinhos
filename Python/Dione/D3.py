@@ -3,13 +3,16 @@
 
 def main():
     user_input = input('Insira seu nome: ')
-    converte_string(user_input)
+    user_input2 = user_input.split()
+    j = ['de', 'di', 'do', 'e', 'dos', 'das', 'du']
+    compara(user_input2, j)
 
-
-def converte_string(user_input):
-    x = user_input.upper().split()
-    for i in x:
-        print('As iniciais do seu nome são:', i[0].replace('D', ''))
+def compara(user_input2, j):
+    x = ''
+    for i in range(len(user_input2)):
+        if user_input2[i] not in j:
+            x += (user_input2[i][0].upper())
+    print('Seu nome é:', *user_input2, 'e suas iniciais são:', x)
 
 
 main()
