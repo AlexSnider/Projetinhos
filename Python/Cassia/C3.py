@@ -13,126 +13,59 @@
 def main():
     try:
         meuarq = open('aquivo.txt', 'r', encoding='utf-8')
-        dadosArq1 = meuarq.read()
+        meuarq.read()
         meuarq.seek(0, 0)
-
         listaArquivo = meuarq.readlines()
-        p1 = listaArquivo[0].split()
-        p2 = listaArquivo[1].split()
-        p3 = listaArquivo[2].split()
-        p4 = listaArquivo[3].split()
-        p5 = listaArquivo[4].split()
+        meuarq.close()
 
-        p1_nome = p1[0]
-        p2_nome = p2[0]
-        p3_nome = p3[0]
-        p4_nome = p4[0]
-        p5_nome = p5[0]
+        list_nomes = []
+        list_notas = []
 
-        p1_nota = p1[1:]
-        p2_nota = p2[1:]
-        p3_nota = p3[1:]
-        p4_nota = p4[1:]
-        p5_nota = p5[1:]
+        for x in range(len(listaArquivo)):
+            list_nomes.append(listaArquivo[x].split()[0])
 
-        imprime_mais_notas(p1_nome, p1_nota, p2_nome, p2_nota, p3_nome, p3_nota, p4_nome, p4_nota, p5_nome, p5_nota)
-        media(p1_nome, p1_nota, p2_nome, p2_nota, p3_nome, p3_nota, p4_nome, p4_nota, p5_nome, p5_nota)
-        maior_nota(p1_nome, p1_nota, p2_nome, p2_nota, p3_nome, p3_nota, p4_nome, p4_nota, p5_nome, p5_nota)
+        for x in range(len(listaArquivo)):
+            list_notas.append(listaArquivo[x].split()[1:])
+
+        imprime_mais_notas(listaArquivo)
+        media(list_notas, list_nomes)
+        maior_nota(list_notas, list_nomes)
     except FileNotFoundError:
         print('Arquivo não encontrado! Por favor, observe o nome digitado.')
 
 
-def imprime_mais_notas(p1_nome, p1_nota, p2_nome, p2_nota, p3_nome, p3_nota, p4_nome, p4_nota, p5_nome, p5_nota):
+def imprime_mais_notas(listaArquivo):
     print('Apenas esses alunos possuem mais de cinco notas:')
-    if len(p1_nota) > 5:
-        print(p1_nome)
-    if len(p2_nota) > 5:
-        print(p2_nome)
-    if len(p3_nota) > 5:
-        print(p3_nome)
-    if len(p4_nota) > 5:
-        print(p4_nome)
-    if len(p5_nota) > 5:
-        print(p5_nome)
+    for i in range(len(listaArquivo)):
+        linha = listaArquivo[i].split(' ')
+        if len(linha) > 6:
+            print(linha[0])
     else:
         print('Os demais não possuem mais de cinco notas.')
         print('-=' * 30)
 
 
-def media(p1_nome, p1_nota, p2_nome, p2_nota, p3_nome, p3_nota, p4_nome, p4_nota, p5_nome, p5_nota):
-    n1 = []
-    n2 = []
-    n3 = []
-    n4 = []
-    n5 = []
-
-    s1m = 0
-    s2m = 0
-    s3m = 0
-    s4m = 0
-    s5m = 0
-
-    for i in p1_nota:
-        n1.append(int(i))
-    for x in n1:
-        x += x - x
-        s1m += x / len(p1_nota)
+def media(list_notas, list_nomes):
     print('Média dos alunos.')
-    print(p1_nome, ':', 'obteve média de:', s1m)
-
-    for i in p2_nota:
-        n2.append(int(i))
-    for x in n2:
-        x += x - x
-        s2m += x / len(p2_nota)
-    print(p2_nome, ':', 'obteve média de:', s2m)
-
-    for i in p3_nota:
-        n3.append(int(i))
-    for x in n3:
-        x += x - x
-        s3m += x / len(p3_nota)
-    print(p3_nome, ':', 'obteve média de:', s3m)
-
-    for i in p4_nota:
-        n4.append(int(i))
-    for x in n4:
-        x += x - x
-        s4m += x / len(p4_nota)
-    print(p4_nome, ':', 'obteve média de:', s4m)
-
-    for i in p5_nota:
-        n5.append(int(i))
-    for x in n5:
-        x += x - x
-        s5m += x / len(p5_nota)
-    print(p5_nome, ':', 'obteve média de:', s5m)
+    for i in range(len(list_notas)):
+        linha = list_notas[i]
+        soma = 0
+        med = 0
+        for x in range(len(linha)):
+            soma += int(linha[x])
+            med = soma / len(list_notas[i])
+        print(list_nomes[i], 'obteve média de:', '%.2f' % med)
     print('-=' * 30)
 
 
-def maior_nota(p1_nome, p1_nota, p2_nome, p2_nota, p3_nome, p3_nota, p4_nome, p4_nota, p5_nome, p5_nota):
-    n1 = []
-    n2 = []
-    n3 = []
-    n4 = []
-    n5 = []
-
-    for i in p1_nota:
-        n1.append(int(i))
-    for i in p2_nota:
-        n2.append(int(i))
-    for i in p3_nota:
-        n3.append(int(i))
-    for i in p4_nota:
-        n4.append(int(i))
-    for i in p5_nota:
-        n5.append(int(i))
-    print('Maior nota por aluno.')
-    print('A maior nota de', p1_nome, 'é:', max(n1))
-    print('A maior nota de', p2_nome, 'é:', max(n2))
-    print('A maior nota de', p3_nome, 'é:', max(n3))
-    print('A maior nota de', p4_nome, 'é:', max(n4))
-    print('A maior nota de', p5_nome, 'é:', max(n5))
+def maior_nota(list_notas, list_nomes):
+    print('Maiores notas por aluno.')
+    for i in range(len(list_notas)):
+        linha = list_notas[i]
+        list_int = []
+        for x in range(len(linha)):
+            list_int.append(int(linha[x]))
+        print('A maior nota de', list_nomes[i], 'é:', max(list_int))
 
 
 main()
