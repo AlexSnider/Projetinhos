@@ -21,8 +21,8 @@ def main():
 
 
 def gerar_numeros(m, n):
-    m = 1
-    n = 10
+    m = 10
+    n = 20
     return random.randint(m, n)
 
 
