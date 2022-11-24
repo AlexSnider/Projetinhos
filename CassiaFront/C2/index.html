@@ -20,16 +20,16 @@
                 <input type="text" class="form-control" id="first-name" placeholder="Mario" onkeypress="chars()" required><br>
                 
                 <label for="second-name" class="form-label">Segundo Nome:</label>
-                <input type="text" class="form-control" id="second-name" onkeypress="chars()" placeholder="Quintana" required><br>
+                <input type="text" class="form-control" id="second-name" placeholder="Quintana" onkeypress="chars()" required><br>
 
                 <label for="email" class="form-label">Insira seu email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Seu melhor email" required><br>
+                <input type="email" class="form-control" id="email" placeholder="exemplo@exemplo.com" onblur="validaEmail(this.value)"required><br>
 
                 <label for="telefone" class="form-label">Insira seu telefone (cel):</label>
-                <input type="tel" class="form-control" id="telefone" placeholder="Insira seu telefone" onkeypress="mTel()" maxlength="14" required><br>
+                <input type="tel" class="form-control" id="telefone" placeholder="Insira seu telefone" onkeypress="mTel()" minlength="14" maxlength="14" required><br>
 
                 <label for="zipcode" class="form-label">Insira seu CEP:</label>
-                <input type="text" class="form-control" id="zipcode" pattern="[0-9]{5}" placeholder="Número do seu CEP" maxlength="10" onkeypress="mCEP()" required><br>
+                <input type="text" class="form-control" id="zipcode" placeholder="Número do seu CEP" onkeypress="mCEP()" minlength="10" maxlength="10" required><br>
                 
                 <!-- Form-anex-data -->
                 <div for="file" class="form-label"><h4>Anexe seus documentos:</h4>
@@ -105,19 +105,19 @@
                 <!-- Form-password -->
                 <div class="password-input">
                     <label for="senha" class="form-label">Insira uma senha:</label>
-                    <input type="password" class="form-control" id="senha" placeholder="Digite uma senha">
+                    <input type="password" class="form-control" id="senha" placeholder="Digite uma senha" minlength="4" required>
                 </div>
 
                 <div class="password-input">
                     <label for="senha1" class="form-label">Confirme sua senha:</label>
-                    <input type="password" class="form-control" id="senha1" placeholder="Confirme a senha digitada">
+                    <input type="password" class="form-control" id="senha1" placeholder="Confirme a senha digitada" minlength="4" required>
                 </div><br>
                 
                 <!-- Form-submit-button -->
-                <button onclick="validate_password()" type="submit" class="btn btn-success">Enviar</button><br><br>
+                <button type="submit" class="btn btn-success" onclick="validate_password()">Enviar</button><br><br>
             </form>
         </div>
     </div>
-    <script src="../C2/js/scrip.js"></script>
+    <script src="js/scrip.js"></script>
 </body>
 </html>

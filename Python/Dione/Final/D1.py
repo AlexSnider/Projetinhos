@@ -1,4 +1,3 @@
-#1
 # Desenvolva um método em Python que retorne uma matriz de m x n posições
 # com valores inteiros aleatórios, m e n são recebidos como parâmetro.
 

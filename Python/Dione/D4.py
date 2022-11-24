@@ -10,17 +10,18 @@ def count_caract(user_input):
     count = 0
     contador = len(user_input)
     count += contador
-    print('O número de total de caracteres é de:', count)
+    print('O número total de caracteres é de:', count)
 
 
 def count_words(user_input):
-    count2 = 0
-    contador2 = len(user_input.split())
+    count2 = []
+    contador2 = user_input.split()
 
-    if contador2 != ',' and '.':
-        count2 += contador2
+    for i in range(len(contador2)):
+        if contador2[i] != '.' and contador2[i] != ',' and contador2[i] != '':
+            count2.append(contador2[i])
 
-    print('O número de total de palavras é de:', count2)
+    print('O número total de palavras é de:', len(count2))
 
 
 main()
