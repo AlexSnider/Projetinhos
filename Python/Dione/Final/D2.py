@@ -2,22 +2,19 @@
 # Monte também um trecho de código para testar a função.
 
 def main():
-    string = inserir()
-    if repetido(string):
-        print('Existe caractere repetido em:', inserir())
+    user_input = input('Insira um texto qualquer: ')
+    if repetido(user_input):
+        print('Existe caractere repetido em:', user_input)
     else:
-        print('Não existe caractere repetido em:', inserir())
+        print('Não existe caractere repetido em:', user_input)
 
 
-def inserir():
-    return input('Isira um texto qualquer: ')
-
-
-def repetido(inserir):
-    for x in inserir:
-        if inserir.count(x) > 1:
+def repetido(user_input):
+    for k in user_input:
+        if user_input.count(k) > 1:
             return True
-    return False
+    else:
+        return False
 
 
 main()
