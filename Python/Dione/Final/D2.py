@@ -12,6 +12,7 @@ def main():
 def repetido(user_input):
     for k in user_input:
         if user_input.count(k) > 1:
+            print('Espaços são contados como repetidos...')
             return True
     else:
         return False
