@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registre seus anúncios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="form-header">
+        <h1 class="title row m-auto justify-content-center my-4">Insira seus dados abaixo!</h1>
+        <h5 class="description row m-auto justify-content-center my-4">Esse formúlario validará o cadastro dos seus itens à venda para a copa de 2022!</h5>
+        <div class="m-auto">
+            <img alt="laeeb" width="250" height="250" class="mx-auto d-block" src="./img/logo.png"><br>
+        </div>
+    </div>
+    
+    <div class="row m-auto justify-content-center">
+        <div class="col-lg-3">
+            <form action="#">
+                <!-- Form-data -->
+                <label for="first-name" class="form-label">Primeiro Nome:</label>
+                <input type="text" class="form-control" id="first-name" placeholder="Mario" onkeypress="chars()" required><br>
+                
+                <label for="second-name" class="form-label">Segundo Nome:</label>
+                <input type="text" class="form-control" id="second-name" placeholder="Quintana" onkeypress="chars()" required><br>
+
+                <label for="email" class="form-label">Insira seu email:</label>
+                <input type="email" class="form-control" id="email" placeholder="exemplo@exemplo.com" onblur="validaEmail(this.value)"required><br>
+
+                <label for="telefone" class="form-label">Insira seu telefone (cel):</label>
+                <input type="tel" class="form-control" id="telefone" placeholder="Insira seu telefone" onkeypress="mTel()" minlength="14" maxlength="14" required><br>
+
+                <label for="cpf" class="form-label">Insira seu CPF:</label>
+                <input type="text" class="form-control" id="cpf" placeholder="Número do seu CPF" onkeypress="mCpf()" onblur="validarCPF()" minlength="14" maxlength="14" required>
+                
+                <!-- Form-gender -->
+                <div class="gender-radio"><br>
+                    <label for="form-check-input">Seu gênero:</label>
+                </div>
+                    
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="radio1">
+                    <label class="form-check-label" for="radio1">Masculino</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="radio1">
+                    <label class="form-check-label" for="radio1">Feminino</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="radio1">
+                    <label class="form-check-label" for="radio1">Prefiro não dizer</label>
+                </div>
+
+                <!-- Form-payment-method -->
+                <div class="escolha-label"><br>
+                    <label for="escolha" class="form-label">Escolha o método de pagamento pelos clientes:</label>
+                </div>
+
+                <div class="escolha-check">
+                    <select class="form-select" id="escolha">
+                        <option value="brand">Cartões (diversos)</option>
+                        <option value="brand">Dinheiro em espécie</option>
+                        <option value="brand">Depósito em conta</option>
+                    </select><br>
+                </div>
+
+                <!-- Form-products -->
+                <div class="checkbox-label">
+                    <label for="checkbox-label">Selecione os produtos que deseja vender na Copa 2022 (diversos):</label>
+                </div><br>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="produtos">
+                    <label class="form-check-label" for="produtos">Bandeiras</label><br>
+                    <input type="number" id="produtos-qtde" placeholder="Insira a quatidade..." class="form-check">
+
+                    <input type="checkbox" class="form-check-input" id="produtos">
+                    <label class="form-check-label" for="produtos">Cornetas</label><br>
+                    <input type="number" id="produtos-qtde" placeholder="Insira a quatidade..." class="form-check">
+
+                    <input type="checkbox" class="form-check-input" id="produtos">
+                    <label class="form-check-label" for="produtos">Máscaras</label><br>
+                    <input type="number" id="produtos-qtde" placeholder="Insira a quatidade..." class="form-check">
+
+                    <input type="checkbox" class="form-check-input" id="produtos">
+                    <label class="form-check-label" for="produtos">Pinturas faciais</label><br>
+                    <input type="number" id="produtos-qtde" placeholder="Insira a quatidade..." class="form-check">
+
+                    <input type="checkbox" class="form-check-input" id="produtos">
+                    <label class="form-check-label" for="produtos">Confetes</label><br>
+                    <input type="number" id="produtos-qtde" placeholder="Insira a quatidade..." class="form-check">
+
+                    <input type="checkbox" class="form-check-input" id="produtos">
+                    <label class="form-check-label" for="produtos">Salgadinhos</label><br>
+                    <input type="number" id="produtos-qtde" placeholder="Insira a quatidade..." class="form-check">
+
+                    <input type="checkbox" class="form-check-input" id="produtos">
+                    <label class="form-check-label" for="produtos">Água</label><br>
+                    <input type="number" id="produtos-qtde" placeholder="Insira a quatidade..." class="form-check">
+
+                    <input type="checkbox" class="form-check-input" id="produtos">
+                    <label class="form-check-label" for="produtos">Doces</label><br>
+                    <input type="number" id="produtos-qtde" placeholder="Insira a quatidade..." class="form-check">
+                </div><br>
+
+                <!-- Form-pricing-range -->
+                <div class="pricing">
+                    <label for="Range1" class="form-label">Valor total aproximado de investimentos durante os dias de Copa: (R$10.000,00 - R$25.000,00)</label>
+                    <input type="range" class="form-range" id="Range1" min="10.000,00" max="25.000,000"><br><br>
+                </div>
+                
+                <!-- Form-anex-data -->
+                <div for="file" class="form-label"><h4>Anexe aqui a(s) imagem(s) do(s) produto(s) (de forma enumerada):</h4>
+                    <input type="file" class="form-control "id="file" name="file">
+                </div><br>
+
+                <!-- Form-text-description -->
+                <div class="form-group">
+                    <label for="Form-text-description">Descreva seus produtos (enumerados e com seus respectivos preços de venda):</label>
+                    <br><br>
+                    <textarea class="form-control" id="Form-text-description" rows="3" placeholder="Exemplo - Produto (1): Confete de cores variadas. R$25,00." minlenght="50" maxlength="1000" required></textarea>
+                </div><br>
+
+                <!-- Form-password -->
+                <div class="password-input">
+                    <label for="senha" class="form-label">Insira uma senha:</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Digite uma senha" minlength="4" required>
+                </div>
+
+                <div class="password-input"><br>
+                    <label for="senha1" class="form-label">Confirme sua senha:</label>
+                    <input type="password" class="form-control" id="senha1" placeholder="Confirme a senha digitada" minlength="4" required>
+                </div><br>
+                
+                <!-- Form-submit-button -->
+                <button type="submit" class="btn btn-success" onclick="validate_password()">Enviar</button><br><br>
+            </form>
+        </div>
+    </div>
+    <script src="js/scrip.js"></script>
+</body>
+</html>
