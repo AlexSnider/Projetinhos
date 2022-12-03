@@ -83,6 +83,18 @@ function validarCPF() {
     }
 }
 
+function mMoeda () {
+   var v = event.target.value;
+   v = v.replace(/\D/g, "");
+   v = v.replace(/^0+/g, "");
+   v = v.replace(/(\d{1})(\d{13})$/, "$1.$2");
+   v = v.replace(/(\d{1})(\d{10})$/, "$1.$2");
+   v = v.replace(/(\d{1})(\d{7})$/, "$1.$2");
+   v = v.replace(/(\d{1})(\d{4})$/, "$1.$2");
+   v = v.replace(/(\d{1})(\d{1,1})$/, "$1,$2");
+   event.target.value = v;
+ }
+
 function validate_password(){
    var pass = document.getElementById('senha').value;
    var confirm_pass = document.getElementById('senha1').value;
