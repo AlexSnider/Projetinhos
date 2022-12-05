@@ -69,41 +69,49 @@
 
                 <!-- Form-products -->
                 <div class="checkbox-label">
-                    <label for="checkbox-label">Selecione os produtos que deseja vender na Copa 2022 (diversos):</label>
+                    <label for="checkbox-label">Selecione os produtos que deseja vender na Copa 2022:</label>
                 </div><br>
 
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="produtos">
                     <label class="form-check-label" for="produtos">Bandeiras</label><br>
-                    <input type="text" id="produtos-qtde" placeholder="Digite o preço..." onkeypress="mMoeda ()" class="form-check">
+                    <input type="text" id="produtos-qtde" placeholder="Digite o preço em R$" onkeypress="mMoeda ()" class="form-check">
+                    <input type="number" id="produtos-qtde" placeholder="Quantidade - 0000" class="form-check">
 
                     <input type="checkbox" class="form-check-input" id="produtos">
                     <label class="form-check-label" for="produtos">Cornetas</label><br>
-                    <input type="text" id="produtos-qtde" placeholder="Digite o preço..." onkeypress="mMoeda ()" class="form-check">
+                    <input type="text" id="produtos-qtde" placeholder="Digite o preço em R$" onkeypress="mMoeda ()" class="form-check">
+                    <input type="number" id="produtos-qtde" placeholder="Quantidade - 0000" class="form-check">
 
                     <input type="checkbox" class="form-check-input" id="produtos">
                     <label class="form-check-label" for="produtos">Máscaras</label><br>
-                    <input type="text" id="produtos-qtde" placeholder="Digite o preço..." onkeypress="mMoeda ()" class="form-check">
+                    <input type="text" id="produtos-qtde" placeholder="Digite o preço em R$" onkeypress="mMoeda ()" class="form-check">
+                    <input type="number" id="produtos-qtde" placeholder="Quantidade - 0000" class="form-check">
 
                     <input type="checkbox" class="form-check-input" id="produtos">
                     <label class="form-check-label" for="produtos">Pinturas faciais</label><br>
-                    <input type="text" id="produtos-qtde" placeholder="Digite o preço..." onkeypress="mMoeda ()" class="form-check">
+                    <input type="text" id="produtos-qtde" placeholder="Digite o preço em R$" onkeypress="mMoeda ()" class="form-check">
+                    <input type="number" id="produtos-qtde" placeholder="Quantidade - 0000" class="form-check">
 
                     <input type="checkbox" class="form-check-input" id="produtos">
                     <label class="form-check-label" for="produtos">Confetes</label><br>
-                    <input type="text" id="produtos-qtde" placeholder="Digite o preço..." onkeypress="mMoeda ()" class="form-check">
+                    <input type="text" id="produtos-qtde" placeholder="Digite o preço em R$" onkeypress="mMoeda ()" class="form-check">
+                    <input type="number" id="produtos-qtde" placeholder="Quantidade - 0000" class="form-check">
 
                     <input type="checkbox" class="form-check-input" id="produtos">
                     <label class="form-check-label" for="produtos">Salgadinhos</label><br>
-                    <input type="text" id="produtos-qtde" placeholder="Digite o preço..." onkeypress="mMoeda ()" class="form-check">
+                    <input type="text" id="produtos-qtde" placeholder="Digite o preço em R$" onkeypress="mMoeda ()" class="form-check">
+                    <input type="number" id="produtos-qtde" placeholder="Quantidade - 0000" class="form-check">
 
                     <input type="checkbox" class="form-check-input" id="produtos">
                     <label class="form-check-label" for="produtos">Água</label><br>
-                    <input type="text" id="produtos-qtde" placeholder="Digite o preço..." onkeypress="mMoeda ()" class="form-check">
-
+                    <input type="text" id="produtos-qtde" placeholder="Digite o preço em R$" onkeypress="mMoeda ()" class="form-check">
+                    <input type="number" id="produtos-qtde" placeholder="Quantidade - 0000" class="form-check">
+                    
                     <input type="checkbox" class="form-check-input" id="produtos">
                     <label class="form-check-label" for="produtos">Doces</label><br>
-                    <input type="text" id="produtos-qtde" placeholder="Digite o preço..." onkeypress="mMoeda ()" class="form-check">
+                    <input type="text" id="produtos-qtde" placeholder="Digite o preço em R$" onkeypress="mMoeda ()" class="form-check">
+                    <input type="number" id="produtos-qtde" placeholder="Quantidade - 0000" class="form-check">
                 </div><br>
 
                 <!-- Form-pricing-range -->
@@ -119,9 +127,11 @@
 
                 <!-- Form-text-description -->
                 <div class="form-group">
-                    <label for="Form-text-description">Descreva seus produtos (enumerados):</label>
+                    <label for="Form-text-description">Descreva seu(s) produto(s) (enumerados):</label>
                     <br><br>
-                    <textarea class="form-control" id="Form-text-description" rows="3" placeholder="Exemplo - Produto (1): Confete de cores variadas." minlenght="50" maxlength="1000" required></textarea>
+                    <textarea class="form-control" id="Form-text-description" rows="3" placeholder="Exemplo - Produto (1): Confete de cores variadas." minlenght="50" maxlength="1000" required></textarea><br>
+                    <label for="form-confirm-item">Clique no botão para salvar a descrição do(s) item(s):</label><br><br>
+                    <button type="submit" class="btn btn-success" id="btn-check" onclick="confirma()">Salvar</button><br>
                 </div><br>
 
                 <!-- Form-password -->

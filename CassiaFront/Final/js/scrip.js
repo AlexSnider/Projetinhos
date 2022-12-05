@@ -95,6 +95,18 @@ function mMoeda () {
    event.target.value = v;
  }
 
+function confirma(){
+   var check = document.getElementById('btn-check')
+   var text = document.getElementById('Form-text-description').value;
+
+   if (text != '' && text.length >= 10){
+      check == onclick
+      alert('Descrição salva! Continue descrevendo caso ainda exista itens a serem adiconados.')
+   }
+   else
+      alert('Campo "Descrição de produtos" está vazio ou com pouca descrição...')
+   }
+
 function validate_password(){
    var pass = document.getElementById('senha').value;
    var confirm_pass = document.getElementById('senha1').value;
