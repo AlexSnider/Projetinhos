@@ -2,13 +2,14 @@
 # módulo que calcula a média das notas de cada estudante e imprime o nome e a média de cada um;
 # módulo que calcula a nota maior de cada estudante e imprima o nome junto com a sua maior nota.
 
-# meuArq = open('aquivo.txt', 'w', encoding='utf-8')
-# meuArq.write('jose 10 5 2 3 4\n')
-# meuArq.write('pedro 3 6 9 2\n')
-# meuArq.write('suzana 8 2 7 4 3 7 4 1 2 9 1 7\n')
-# meuArq.write('gisela 2 8 2 5 6 7\n')
-# meuArq.write('joao 4 3 5 7 6')
-# meuArq.close()
+meuArq = open('aquivo.txt', 'w', encoding='utf-8')
+meuArq.write('jose 10 5 2 3 4 5 9 10 7\n')
+meuArq.write('pedro 3 6 9 2 6 9 3 4\n')
+meuArq.write('suzana 8 2 7\n')
+meuArq.write('gisela 2 8 2 5 6 7\n')
+meuArq.write('joao 4 3 5 7 6 9 5\n')
+meuArq.write('gabriel 2 3 4 5 6 7 0')
+
 
 def main():
     try:
@@ -67,5 +68,7 @@ def maior_nota(list_notas, list_nomes):
             list_int.append(int(linha[x]))
         print('A maior nota de', list_nomes[i], 'é:', max(list_int))
 
+
+meuArq.close()
 
 main()
