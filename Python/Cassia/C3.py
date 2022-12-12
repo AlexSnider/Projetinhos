@@ -2,6 +2,11 @@
 # módulo que calcula a média das notas de cada estudante e imprime o nome e a média de cada um;
 # módulo que calcula a nota maior de cada estudante e imprima o nome junto com a sua maior nota.
 
+import logging
+
+logging.basicConfig(filename='c3.log', level=logging.DEBUG,
+                    format='%(asctime)s :: %(levelname)s :: %(lineno)d :: %(message)s -> %(filename)s')
+
 meuArq = open('aquivo.txt', 'w', encoding='utf-8')
 meuArq.write('jose 10 5 2 3 4 5 9 10 7\n')
 meuArq.write('pedro 3 6 9 2 6 9 3 4\n')
@@ -33,6 +38,7 @@ def main():
         maior_nota(list_notas, list_nomes)
     except FileNotFoundError:
         print('Arquivo não encontrado! Por favor, observe o nome digitado.')
+        logging.critical('O usúario digitou um arquivo inexistente!')
 
 
 def imprime_mais_notas(listaArquivo):
@@ -44,6 +50,7 @@ def imprime_mais_notas(listaArquivo):
     else:
         print('Os demais não possuem mais de cinco notas.')
         print('-=' * 30)
+    logging.info('Foi exibido os alunos que não possuem mais de cinco notas.')
 
 
 def media(list_notas, list_nomes):
@@ -56,7 +63,8 @@ def media(list_notas, list_nomes):
             soma += int(linha[x])
             med = soma / len(list_notas[i])
         print(list_nomes[i], 'obteve média de:', '%.2f' % med)
-    print('-=' * 30)
+        print('-=' * 30)
+    logging.info('Foi exbido a média dos alunos.')
 
 
 def maior_nota(list_notas, list_nomes):
@@ -67,6 +75,7 @@ def maior_nota(list_notas, list_nomes):
         for x in range(len(linha)):
             list_int.append(int(linha[x]))
         print('A maior nota de', list_nomes[i], 'é:', max(list_int))
+    logging.info('As maiores notas foram exibidas.')
 
 
 meuArq.close()

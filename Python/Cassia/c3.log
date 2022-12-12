@@ -1,0 +1,4 @@
+2022-12-12 10:36:10,222 :: CRITICAL :: 41 :: O usúario digitou um arquivo inexistente! -> C3.py
+2022-12-12 10:38:08,517 :: INFO :: 53 :: Foi exibido os alunos que não possuem mais de cinco notas. -> C3.py
+2022-12-12 10:38:08,517 :: INFO :: 67 :: Foi exbido a média dos alunos. -> C3.py
+2022-12-12 10:38:08,517 :: INFO :: 78 :: As maiores notas foram exibidas. -> C3.py
