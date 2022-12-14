@@ -1,46 +1,56 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reservar Carro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="form-header">
         <h1 class="title row m-auto justify-content-center my-4">Insira seus dados abaixo!</h1>
-        <h5 class="description row m-auto justify-content-center my-4">Esse formúlario validará sua escolha pelo carro desejado!</h5>
+        <h5 class="description row m-auto justify-content-center my-4">Esse formúlario validará sua escolha pelo carro
+            desejado!</h5>
     </div>
-    
+
     <div class="row m-auto justify-content-center">
         <div class="col-lg-3">
             <form action="#">
                 <!-- Form-data -->
                 <label for="first-name" class="form-label">Primeiro Nome:</label>
-                <input type="text" class="form-control" id="first-name" placeholder="Mario" onkeypress="chars()" required><br>
-                
+                <input type="text" class="form-control" id="first-name" placeholder="Mario" onkeypress="chars()"
+                    required><br>
+
                 <label for="second-name" class="form-label">Segundo Nome:</label>
-                <input type="text" class="form-control" id="second-name" placeholder="Quintana" onkeypress="chars()" required><br>
+                <input type="text" class="form-control" id="second-name" placeholder="Quintana" onkeypress="chars()"
+                    required><br>
 
                 <label for="email" class="form-label">Insira seu email:</label>
-                <input type="email" class="form-control" id="email" placeholder="exemplo@exemplo.com" onblur="validaEmail(this.value)"required><br>
+                <input type="email" class="form-control" id="email" placeholder="exemplo@exemplo.com"
+                    onblur="validaEmail(this.value)" required><br>
 
                 <label for="telefone" class="form-label">Insira seu telefone (cel):</label>
-                <input type="tel" class="form-control" id="telefone" placeholder="Insira seu telefone" onkeypress="mTel()" minlength="14" maxlength="14" required><br>
+                <input type="tel" class="form-control" id="telefone" placeholder="Insira seu telefone"
+                    onkeypress="mTel()" minlength="14" maxlength="14" required><br>
 
                 <label for="zipcode" class="form-label">Insira seu CEP:</label>
-                <input type="text" class="form-control" id="zipcode" placeholder="Número do seu CEP" onkeypress="mCEP()" minlength="10" maxlength="10" required><br>
-                
+                <input type="text" class="form-control" id="zipcode" placeholder="Número do seu CEP" onkeypress="mCEP()"
+                    minlength="10" maxlength="10" required><br>
+
                 <!-- Form-anex-data -->
-                <div for="file" class="form-label"><h4>Anexe seus documentos:</h4>
-                    <input type="file" class="form-control "id="file" name="file">
+                <div for="file" class="form-label">
+                    <h4>Anexe seus documentos:</h4>
+                    <input type="file" class="form-control " id="file" name="file">
                 </div>
 
                 <!-- Form-gender -->
                 <div class="gender-radio"><br>
                     <label for="form-check-input">Seu gênero:</label>
                 </div>
-                    
+
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="radio1">
                     <label class="form-check-label" for="radio1">Masculino</label>
@@ -55,7 +65,7 @@
                     <input class="form-check-input" type="radio" id="radio1">
                     <label class="form-check-label" for="radio1">Prefiro não dizer</label>
                 </div><br>
-                
+
                 <!-- Form-car -->
                 <div class="escolha-label">
                     <label for="escolha" class="form-label">Escolha a marca do carro:</label>
@@ -93,9 +103,10 @@
                 <!-- Form-pricing-range -->
                 <div class="pricing">
                     <label for="Range1" class="form-label">Preço desejável: (R$50.000 - R$125.000)</label>
-                    <input type="range" class="form-range" id="Range1" min="50.000,00" max="125.000,00" value="50.000"><br><br>
+                    <input type="range" class="form-range" id="Range1" min="50.000,00" max="125.000,00"
+                        value="50.000"><br><br>
                 </div>
-                
+
                 <!-- Form-car-color -->
                 <div class="color-picker">
                     <label for="color-input" class="form-label">Escolha uma cor:</label>
@@ -105,14 +116,16 @@
                 <!-- Form-password -->
                 <div class="password-input">
                     <label for="senha" class="form-label">Insira uma senha:</label>
-                    <input type="password" class="form-control" id="senha" placeholder="Digite uma senha" minlength="4" required>
+                    <input type="password" class="form-control" id="senha" placeholder="Digite uma senha" minlength="4"
+                        required>
                 </div>
 
                 <div class="password-input">
                     <label for="senha1" class="form-label">Confirme sua senha:</label>
-                    <input type="password" class="form-control" id="senha1" placeholder="Confirme a senha digitada" minlength="4" required>
+                    <input type="password" class="form-control" id="senha1" placeholder="Confirme a senha digitada"
+                        minlength="4" required>
                 </div><br>
-                
+
                 <!-- Form-submit-button -->
                 <button type="submit" class="btn btn-success" onclick="validate_password()">Enviar</button><br><br>
             </form>
@@ -120,4 +133,5 @@
     </div>
     <script src="js/scrip.js"></script>
 </body>
+
 </html>

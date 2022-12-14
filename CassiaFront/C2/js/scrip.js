@@ -1,4 +1,4 @@
-function chars(){
+function chars() {
    var name = event.target.value;
    name = name.replace(/\d/g, '')
    event.target.value = name;
@@ -6,11 +6,11 @@ function chars(){
 
 function validaEmail(e) {
    var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-   if (String(e).search (filter) == -1)
+   if (String(e).search(filter) == -1)
       alert('Seu email parece não estar no formato correto. Por favor, corrija.')
 }
 
-function mTel () {
+function mTel() {
    var tel = event.target.value;
    tel = tel.replace(/\D/g, "")
    tel = tel.replace(/^(\d)/, "($1")
@@ -29,7 +29,7 @@ function mTel () {
    event.target.value = tel;
 }
 
-function mCEP () {
+function mCEP() {
    var cep = event.target.value;
    cep = cep.replace(/\D/g, "")
    cep = cep.replace(/^(\d{2})(\d)/, "$1.$2")
@@ -37,31 +37,26 @@ function mCEP () {
    event.target.value = cep;
 }
 
-function validate_password(){
+function validate_password() {
    var pass = document.getElementById('senha').value;
    var confirm_pass = document.getElementById('senha1').value;
    var nome = document.getElementById('first-name').value;
    var sobrenome = document.getElementById('second-name').value;
-   var email = document.getElementById('email'). value;
+   var email = document.getElementById('email').value;
    var telefone = document.getElementById('telefone').value;
    var cep = document.getElementById('zipcode').value;
 
 
-   if (nome && sobrenome && email && telefone && cep && pass && confirm_pass != ''){
+   if (nome && sobrenome && email && telefone && cep && pass && confirm_pass != '') {
       alert('Os campos obrigatórios foram preenchidos!')
-      if (pass == confirm_pass){
+      if (pass == confirm_pass) {
          alert('Cadastro validado e registrado!')
       }
-      else{
+      else {
          alert('Senhas diferentes. Por favor, verifique novamente a confirmação da senha!')
       }
    }
-   else{
+   else {
       alert('Parece que há campos a serem preenchidos. Por favor, complete todos.')
    }
 }
-
-
-
-
-
