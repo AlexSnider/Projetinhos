@@ -1,4 +1,4 @@
-function chars(){
+function chars() {
    var name = event.target.value;
    name = name.replace(/\d/g, '')
    event.target.value = name;
@@ -6,11 +6,11 @@ function chars(){
 
 function validaEmail(e) {
    var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-   if (String(e).search (filter) == -1)
+   if (String(e).search(filter) == -1)
       alert('Seu email parece não estar no formato correto. Por favor, corrija.')
 }
 
-function mTel () {
+function mTel() {
    var tel = event.target.value;
    tel = tel.replace(/\D/g, "")
    tel = tel.replace(/^(\d)/, "($1")
@@ -55,35 +55,35 @@ function validarCPF() {
          cpf == "77777777777" ||
          cpf == "88888888888" ||
          cpf == "99999999999")
-             ok = 0;
+         ok = 0;
       if (ok == 1) {
          add = 0;
          for (i = 0; i < 9; i++)
             add += parseInt(cpf.charAt(i)) * (10 - i);
+         rev = 11 - (add % 11);
+         if (rev == 10 || rev == 11)
+            rev = 0;
+         if (rev != parseInt(cpf.charAt(9)))
+            ok = 0;
+         if (ok == 1) {
+            add = 0;
+            for (i = 0; i < 10; i++)
+               add += parseInt(cpf.charAt(i)) * (11 - i);
             rev = 11 - (add % 11);
             if (rev == 10 || rev == 11)
                rev = 0;
-            if (rev != parseInt(cpf.charAt(9)))
+            if (rev != parseInt(cpf.charAt(10)))
                ok = 0;
-            if (ok == 1) {
-               add = 0;
-               for (i = 0; i < 10; i++)
-                  add += parseInt(cpf.charAt(i)) * (11 - i);
-               rev = 11 - (add % 11);
-               if (rev == 10 || rev == 11)
-                  rev = 0;
-               if (rev != parseInt(cpf.charAt(10)))
-                  ok = 0;
-            }
-        }
-        if (ok == 0) {
-           alert("Ops... Ocorreu um problema... CPF inválido!");
-           event.target.focus();
-        }
-    }
+         }
+      }
+      if (ok == 0) {
+         alert("Ops... Ocorreu um problema... CPF inválido!");
+         event.target.focus();
+      }
+   }
 }
 
-function mMoeda () {
+function mMoeda() {
    var v = event.target.value;
    v = v.replace(/\D/g, "");
    v = v.replace(/^0+/g, "");
@@ -93,41 +93,41 @@ function mMoeda () {
    v = v.replace(/(\d{1})(\d{4})$/, "$1.$2");
    v = v.replace(/(\d{1})(\d{1,1})$/, "$1,$2");
    event.target.value = v;
- }
+}
 
-function confirma(){
+function confirma() {
    var check = document.getElementById('btn-check')
    var text = document.getElementById('Form-text-description').value;
 
-   if (text != '' && text.length >= 10){
+   if (text != '' && text.length >= 10) {
       check == onclick
       alert('Descrição salva! Continue descrevendo caso ainda exista itens a serem adiconados.')
    }
    else
       alert('Campo "Descrição de produtos" está vazio ou com pouca descrição...')
-   }
+}
 
-function validate_password(){
+function validate_password() {
    var pass = document.getElementById('senha').value;
    var confirm_pass = document.getElementById('senha1').value;
    var nome = document.getElementById('first-name').value;
    var sobrenome = document.getElementById('second-name').value;
-   var email = document.getElementById('email'). value;
+   var email = document.getElementById('email').value;
    var telefone = document.getElementById('telefone').value;
    var cpf = document.getElementById('cpf').value;
    var text = document.getElementById('Form-text-description').value;
 
 
-   if (nome && sobrenome && email && telefone && cpf && pass && text && confirm_pass != ''){
+   if (nome && sobrenome && email && telefone && cpf && pass && text && confirm_pass != '') {
       alert('Os campos obrigatórios foram preenchidos!')
-      if (pass == confirm_pass){
+      if (pass == confirm_pass) {
          alert('Cadastro validado e registrado!')
       }
-      else{
+      else {
          alert('Senhas diferentes. Por favor, verifique novamente a confirmação da senha!')
       }
    }
-   else{
+   else {
       alert('Parece que há campos a serem preenchidos. Por favor, complete todos.')
    }
 }
