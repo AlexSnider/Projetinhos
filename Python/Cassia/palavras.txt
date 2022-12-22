@@ -1,10 +1,5 @@
-foca
-abacaxi
-peixe
-fruta
-maça
-luscas
-alex
-fernando
-mendes
-flavio
+3
+4
+2
+4
+2

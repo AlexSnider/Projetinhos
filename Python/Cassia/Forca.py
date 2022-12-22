@@ -8,6 +8,7 @@
 # 5 - create a func. that calls a hangman game using the words in the txt. file
 
 import random
+import time
 
 
 def main():
@@ -15,26 +16,41 @@ def main():
 
 
 def menu():
-    print('Welcome! Select a number to start...')
-    print('-=' * 20)
-    print('Insira o número 1 para inserir palavras no arquivo.')
-    print('Insira o número 2 para carregar o arquivo.')
-    print('Insira o número 3 para limpar o arquivo.')
-    print('Insira o número 4 para iniciar o game da forca.')
-    print('Insira o número 5 para encerrar.')
-    print('-=' * 20)
-    user_input = input('Insira um número correspondente a função: ')
+    try:
+        print('-=' * 20)
+        print('Welcome! Select a number to start...')
+        print('-=' * 20)
+        print('Insira o número (1) para inserir palavras em um arquivo que será salvo em txt.')
+        print('Insira o número (2) para carregar o arquivo txt na memória.')
+        print('Insira o número (3) para limpar o arquivo.')
+        print('Insira o número (4) para iniciar o game da forca usando as palavras do arquivo txt.')
+        print('Insira o número (5) para encerrar a aplicação.')
+        print('-=' * 20)
 
-    if user_input == '1':
-        return insert_words(), load_file(), menu()
-    if user_input == '2':
-        return load_file(), menu()
-    if user_input == '3':
-        return clean_file(), menu()
-    if user_input == '4':
-        return game(), menu()
-    if user_input == '5':
-        quit('Programa encerrado!')
+        user_input = int(input('Insira um número correspondente a função do menu acima: '))
+
+        if int(user_input) >= 6 or int(user_input) <= 0:
+            print('#' * 25)
+            print('Digite números de 1 à 5!'.upper())
+            print('#' * 25)
+            time.sleep(1.5)
+            return menu()
+        if user_input == '1':
+            return insert_words(), load_file(), menu()
+        if user_input == '2':
+            return load_file(), menu()
+        if user_input == '3':
+            return clean_file(), menu()
+        if user_input == '4':
+            return game(), menu()
+        if user_input == '5':
+            quit('Programa encerrado!')
+    except ValueError:
+        print('#' * 25)
+        print('Digite apenas números...'.upper())
+        print('#' * 25)
+        time.sleep(1.5)
+        return menu()
 
 
 def insert_words():
@@ -60,13 +76,14 @@ def load_file():
         if len(l_arq) >= 10:
             for x in range(len(l_arq)):
                 lista_arq.append(l_arq[x].split())
-            print('File loaded!')
+            print('-=' * 20)
+            print('Arquivo carregado para o jogo.')
             return lista_arq
 
         elif len(l_arq) < 10:
             need_lines = 10 - len(l_arq)
-            print('O arquivo parace não conter aquivos ou menos de 10...')
-            print('Você ainda precisa de mais', need_lines, 'palavras para continuar...')
+            print('O arquivo parace não conter aquivos ou menos de 10 (10 é o mínimo para iniciar o game...)')
+            print('Você ainda precisa de mais:', need_lines, '- Por favor, insira o restante.')
         for word in l_arq:
             lista_arq.append(word.replace('\n', ''))
         if need_lines != 0:
@@ -85,7 +102,7 @@ def clean_file():
         arqs.write('')
     print('-=' * 20)
     print('File erased!')
-    print('*' * 30)
+    print('-=' * 20)
 
 
 def game():
@@ -96,40 +113,30 @@ def game():
     for i in range(len(escolhida)):
         splited_word.append(escolhida[i].upper())
 
-    print('A palavra escolhida tem', len(splited_word), 'letras...')
+    print('-=' * 20)
+    print('A palavra escolhida tem', len(splited_word), 'letras.')
+    print('-=' * 20)
 
-    lista1 = ['__'] * len(splited_word)
-    print(splited_word)
+    lista1 = ['|__|'] * len(splited_word)
     print(*lista1)
 
     for i in range(8):
         if lista1 == splited_word:
+            print('-=' * 20)
             print('Você acertou, a palavra era:', escolhida)
+            print('-=' * 20)
             break
-        user_input = input('\nInsira letras para verificar se a palavra contém alguma: ').upper()
+        user_input = input('Insira uma letra para verificar se a palavra contém alguma: ').upper()
         for x in range(len(splited_word)):
             if splited_word[x] == user_input:
                 lista1[x] = user_input.upper()
         if user_input not in splited_word:
+            print('-=' * 20)
             print('Você tem mais', 8 - i - 1, 'tentativas!')
+            print('-=' * 20)
         print(*lista1)
         if i == 7:
             print('Você perdeu! A palavra era:', escolhida)
-
-    # count = 0
-    # letras = []
-    # while count != 8:
-    #     user_input = input('\nInsira letras para verificar se a palavra contém alguma: ')
-    #     letras.append(user_input)
-    #     for x in range(len(letras)):
-    #         for i in range(len(splited_word)):
-    #             if letras[x] in splited_word[i]:
-    #                 print(letras[x].upper(), end='')
-    #             if letras[x] not in splited_word[i]:
-    #                 espaco = ' .___. '
-    #                 print(espaco, end='')
-    #     count += 1
-    #     print(letras)
 
 
 main()
