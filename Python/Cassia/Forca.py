@@ -16,34 +16,33 @@ def main():
 
 
 def menu():
+    print('-=' * 20)
+    print('Welcome! Select a number to start...')
+    print('-=' * 20)
+    print('Insira o número (1) para inserir palavras em um arquivo que será salvo em txt.')
+    print('Insira o número (2) para carregar o arquivo txt na memória.')
+    print('Insira o número (3) para limpar o arquivo.')
+    print('Insira o número (4) para iniciar o game da forca usando as palavras do arquivo txt.')
+    print('Insira o número (5) para encerrar a aplicação.')
+    print('-=' * 20)
+
     try:
-        print('-=' * 20)
-        print('Welcome! Select a number to start...')
-        print('-=' * 20)
-        print('Insira o número (1) para inserir palavras em um arquivo que será salvo em txt.')
-        print('Insira o número (2) para carregar o arquivo txt na memória.')
-        print('Insira o número (3) para limpar o arquivo.')
-        print('Insira o número (4) para iniciar o game da forca usando as palavras do arquivo txt.')
-        print('Insira o número (5) para encerrar a aplicação.')
-        print('-=' * 20)
-
         user_input = int(input('Insira um número correspondente a função do menu acima: '))
-
         if int(user_input) >= 6 or int(user_input) <= 0:
             print('#' * 25)
             print('Digite números de 1 à 5!'.upper())
             print('#' * 25)
             time.sleep(1.5)
             return menu()
-        if user_input == '1':
+        if user_input == 1:
             return insert_words(), load_file(), menu()
-        if user_input == '2':
+        if user_input == 2:
             return load_file(), menu()
-        if user_input == '3':
+        if user_input == 3:
             return clean_file(), menu()
-        if user_input == '4':
+        if user_input == 4:
             return game(), menu()
-        if user_input == '5':
+        if user_input == 5:
             quit('Programa encerrado!')
     except ValueError:
         print('#' * 25)
@@ -82,7 +81,7 @@ def load_file():
 
         elif len(l_arq) < 10:
             need_lines = 10 - len(l_arq)
-            print('O arquivo parace não conter aquivos ou menos de 10 (10 é o mínimo para iniciar o game...)')
+            print('O arquivo parace não conter aquivos ou menos de 10 (10 é o mínimo para iniciar o game).')
             print('Você ainda precisa de mais:', need_lines, '- Por favor, insira o restante.')
         for word in l_arq:
             lista_arq.append(word.replace('\n', ''))
@@ -90,19 +89,22 @@ def load_file():
             for i in range(need_lines):
                 with open('palavras.txt', 'a') as arq2_app:
                     user_input = input('Insira as palavras restantes: ')
+                    while user_input.isnumeric() or user_input == '':
+                        print('Digite apenas palavras!')
+                        user_input = input('Insira as palavras restantes: ')
                     arq2_app.write(user_input + '\n')
                     lista_arq.append(user_input)
-        print('-=' * 20)
-        print('As palavras foram gravadas no arquivo...')
-        print('-=' * 20)
+        print('#' * 38)
+        print('As palavras foram gravadas no arquivo!'.upper())
+        print('#' * 38)
 
 
 def clean_file():
     with open('palavras.txt', 'w') as arqs:
         arqs.write('')
-    print('-=' * 20)
-    print('File erased!')
-    print('-=' * 20)
+    print('#' * 12)
+    print('File erased!'.upper())
+    print('#' * 12)
 
 
 def game():
@@ -123,8 +125,8 @@ def game():
     for i in range(8):
         if lista1 == splited_word:
             print('-=' * 20)
-            print('Você acertou, a palavra era:', escolhida)
-            print('-=' * 20)
+            print('Você acertou, a palavra era:', escolhida.upper())
+            time.sleep(3)
             break
         user_input = input('Insira uma letra para verificar se a palavra contém alguma: ').upper()
         for x in range(len(splited_word)):
@@ -134,9 +136,12 @@ def game():
             print('-=' * 20)
             print('Você tem mais', 8 - i - 1, 'tentativas!')
             print('-=' * 20)
+            time.sleep(1)
         print(*lista1)
         if i == 7:
-            print('Você perdeu! A palavra era:', escolhida)
+            print('-=' * 20)
+            print('Você perdeu! A palavra era:', escolhida.upper())
+            time.sleep(3)
 
 
 main()
