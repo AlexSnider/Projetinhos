@@ -71,14 +71,12 @@ def load_file():
         l_arq = arq.readlines()
 
         lista_arq = []
-
         if len(l_arq) >= 10:
             for x in range(len(l_arq)):
                 lista_arq.append(l_arq[x].split())
             print('-=' * 20)
             print('Arquivo carregado para o jogo.')
             return lista_arq
-
         elif len(l_arq) < 10:
             need_lines = 10 - len(l_arq)
             print('O arquivo parace não conter aquivos ou menos de 10 (10 é o mínimo para iniciar o game).')
@@ -119,7 +117,7 @@ def game():
     print('A palavra escolhida tem', len(splited_word), 'letras.')
     print('-=' * 20)
 
-    lista1 = ['|__|'] * len(splited_word)
+    lista1 = ['|_|'] * len(splited_word)
     print(*lista1)
 
     for i in range(8):
